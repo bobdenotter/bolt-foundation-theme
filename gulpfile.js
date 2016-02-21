@@ -84,6 +84,10 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('css'));
 });
 
-gulp.task('default', ['sass'], function() {
+// Build the "dist" folder by running all of the above tasks
+gulp.task('build', ['javascript', 'sass']);
+
+
+gulp.task('default', ['javascript', 'sass'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
 });
