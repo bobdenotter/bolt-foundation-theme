@@ -48,13 +48,30 @@ var PATHS = {
   ]
 };
 
+// Combine JavaScript into one file
+// In production, the file is minified
+gulp.task('javascript', function() {
+  var uglify = $.if(isProduction, $.uglify()
+    .on('error', function (e) {
+      console.log(e);
+    }));
+
+  return gulp.src(PATHS.javascript)
+    .pipe($.sourcemaps.init())
+    .pipe($.concat('foundation.js'))
+    .pipe(uglify)
+    .pipe($.if(!isProduction, $.sourcemaps.write()))
+    .pipe(gulp.dest('js'));
+});
+
 // Compile Sass into CSS
 // In production, the CSS is compressed
 gulp.task('sass', function() {
 
   var minifycss = $.if(isProduction, $.minifyCss());
 
-  return gulp.src('scss/foundation.scss')
+  return gulp.src('scss/*.scss')
+    .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
     })
@@ -63,6 +80,7 @@ gulp.task('sass', function() {
       browsers: COMPATIBILITY
     }))
     .pipe(minifycss)
+    .pipe($.if(!isProduction, $.sourcemaps.write()))
     .pipe(gulp.dest('css'));
 });
 
