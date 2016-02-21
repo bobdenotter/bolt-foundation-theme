@@ -27,7 +27,7 @@
     "rimraf": "^2.4.3",
     "run-sequence": "^1.1.0",
     "style-sherpa": "^1.0.0",
-    "yargs": "^3.8.0"
+    "yargs": "^4.1.0"
   },
   "repository": {
     "type": "git",
