@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 @import 'settings';
-@import 'foundation';
+@import 'bower_components/foundation-sites/scss/foundation';
 @import 'motion-ui';
 
 @include foundation-global-styles;
@@ -11,9 +11,9 @@
 @include foundation-forms;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-@include foundation-badge;
+// @include foundation-accordion;
+// @include foundation-accordion-menu;
+// @include foundation-badge;
 @include foundation-breadcrumbs;
 @include foundation-button-group;
 @include foundation-callout;
@@ -25,19 +25,19 @@
 @include foundation-label;
 @include foundation-media-object;
 @include foundation-menu;
-@include foundation-off-canvas;
+// @include foundation-off-canvas;
 @include foundation-orbit;
 @include foundation-pagination;
-@include foundation-progress-bar;
-@include foundation-slider;
+// @include foundation-progress-bar;
+// @include foundation-slider;
 @include foundation-sticky;
-@include foundation-reveal;
-@include foundation-switch;
+// @include foundation-reveal;
+// @include foundation-switch;
 @include foundation-table;
 @include foundation-tabs;
 @include foundation-thumbnail;
 @include foundation-title-bar;
-@include foundation-tooltip;
+// @include foundation-tooltip;
 @include foundation-top-bar;
 
 @include motion-ui-transitions;
