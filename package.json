@@ -1,41 +1,30 @@
 {
-  "name": "foundation-zurb-template",
+  "name": "foundation-sites-template",
   "version": "1.0.0",
-  "description": "Official ZURB Template for Foundation for Sites.",
+  "description": "Basic template for a new Foundation for Sites project.",
   "main": "gulpfile.js",
-  "scripts": {
-    "start": "gulp",
-    "build": "gulp build --production"
-  },
-  "author": "ZURB <foundation@zurb.com>",
-  "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "^2.5.2",
-    "gulp-extname": "^0.2.0",
-    "gulp-if": "^2.0.0",
-    "gulp-imagemin": "^2.2.1",
     "gulp-load-plugins": "^1.1.0",
-    "gulp-minify-css": "^1.2.1",
-    "gulp-sass": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.2.0",
-    "gulp-uncss": "^1.0.1",
-    "panini": "^1.0.0",
-    "rimraf": "^2.4.3",
-    "run-sequence": "^1.1.0",
-    "style-sherpa": "^1.0.0",
-    "yargs": "^4.1.0"
+    "gulp-sass": "^2.1.0"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp sass"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zurb/foundation-zurb-template.git"
+    "url": "https://github.com/zurb/foundation-sites-template.git"
   },
   "bugs": {
     "url": "https://github.com/zurb/foundation-sites/issues",
     "email": "foundation@zurb.com"
   },
-  "private": true
+  "author": "ZURB <foundation@zurb.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "gulp-autoprefixer": "^3.1.0"
+  }
 }
