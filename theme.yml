@@ -23,6 +23,9 @@ record_template: record.twig
 listing_template: listing.twig
 search_results_template: listing.twig
 
+static_pages:
+    styleguide: 'styleguide.twig'
+
 # Amount of records and sorting in listing. If you're creating a theme for
 # distribution, you can specify the amount of records displayed on listing pages,
 # including search results. The values you will set in this config will override
