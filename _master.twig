@@ -11,10 +11,31 @@
 {% endblock headincludes %}
   </head>
   <body>
+  {% block body %}
 
-{% block body %}
+  <div class="row">
 
-{% endblock body %}
+
+      {% if theme.layout.aside == "left" %}
+        {% include '_aside.twig' %}
+      {% endif %}
+
+
+      <div class="{% if theme.layout.aside not in ['left', 'right'] %}large-centered{% endif %} large-8 columns">
+
+          {% block main %}
+
+          {% endblock main %}
+
+      </div>
+
+      {% if theme.layout.aside == "right" %}
+          {% include '_aside.twig' %}
+      {% endif %}
+
+
+  {% endblock body %}
+  </div>
 
     <script src="{{ paths.theme }}js/jquery.js"></script>
     <script src="{{ paths.theme }}js/what-input.js"></script>

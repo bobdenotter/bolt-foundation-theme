@@ -1,0 +1,21 @@
+{% extends '_master.twig' %}
+
+{% block main %}
+    <div class="row">
+      <div class="large-12 columns">
+
+        {# special case: See if we actually want the Styleguide. #}
+        {% if app.request.server.get('REQUEST_URI') == '/styleguide' %}
+            {% include 'styleguide.twig' %}
+        {% else %}
+            {% setcontent record = 'blocks/404-not-found' %}
+        {% endif %}
+
+        <h1>{{ record.title }}</h1>
+
+        {{ fields(record) }}
+
+      </div>
+    </div>
+
+{% endblock main %}

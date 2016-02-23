@@ -3,6 +3,13 @@
 # Variables that are in this file, can be used in your twig template like {{ theme.foo }}
 # Note: If variables do not immediately show up, clear the cache, in the Bolt Backend.
 
+layout:
+  aside: none # left, right, none
+  aside-width: 4 # out of 12
+  main-width: 8 # out of 12
+
+
+
 foo: bar
 
 # setting the header image. The default images in this theme all came from Pexels: http://pexels.com
@@ -23,8 +30,7 @@ record_template: record.twig
 listing_template: listing.twig
 search_results_template: listing.twig
 
-static_pages:
-    styleguide: 'styleguide.twig'
+notfound: notfound.twig
 
 # Amount of records and sorting in listing. If you're creating a theme for
 # distribution, you can specify the amount of records displayed on listing pages,

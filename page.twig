@@ -1,0 +1,26 @@
+{% extends '_master.twig' %}
+
+{% block main %}
+
+    <div class="row">
+
+        <div class="large-12 columns">
+            {{ widgets('main_top') }}
+        </div>
+
+        <div class="large-12 columns">
+
+            <h1>{{ record.title }}</h1>
+
+            {{ record.image }}
+
+            {{ record.teaser }}
+
+            {{ record.body }}
+
+
+
+        </div>
+    </div>
+
+{% endblock main %}
