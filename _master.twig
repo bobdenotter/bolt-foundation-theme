@@ -1,10 +1,12 @@
+{% set main_width = theme.layout.main_width|default(8) %}
+{% set aside_width = theme.layout.aside_width|default(4) %}
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>{% block title %}Foundation for Bolt{% endblock title %}</title>
     <link rel="stylesheet" href="{{ paths.theme }}css/foundation.css">
     <link rel="stylesheet" href="{{ paths.theme }}css/theme.css">
 {% block headincludes %}
@@ -15,13 +17,11 @@
 
   <div class="row">
 
-
       {% if theme.layout.aside == "left" %}
         {% include '_aside.twig' %}
       {% endif %}
 
-
-      <div class="{% if theme.layout.aside not in ['left', 'right'] %}large-centered{% endif %} large-8 columns">
+      <div class="{% if theme.layout.aside not in ['left', 'right'] %}large-centered{% endif %} large-{{ main_width }} columns">
 
           {% block main %}
 

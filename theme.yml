@@ -4,9 +4,9 @@
 # Note: If variables do not immediately show up, clear the cache, in the Bolt Backend.
 
 layout:
-  aside: none # left, right, none
-  aside-width: 4 # out of 12
-  main-width: 8 # out of 12
+  aside: right # left, right, none
+  aside_width: 4 # out of 12
+  main_width: 8 # out of 12
 
 
 

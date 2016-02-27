@@ -1,5 +1,9 @@
 {% extends '_master.twig' %}
 
+{% block title %}
+    404 Not found
+{% endblock title %}
+
 {% block main %}
     <div class="row">
       <div class="large-12 columns">
@@ -11,9 +15,18 @@
             {% setcontent record = 'blocks/404-not-found' %}
         {% endif %}
 
-        <h1>{{ record.title }}</h1>
+        <h1>{{ record.title|default('404 not found') }}</h1>
 
-        {{ fields(record) }}
+        {% if fields(record) %}
+            {{ fields(record) }}
+        {% else %}
+            <p>
+                The requested page was not found.
+                <mark>
+                    Add a Blocks record with slug '404-not-found' to customize this message.
+                </mark>
+            <p>
+        {% endif %}
 
       </div>
     </div>
