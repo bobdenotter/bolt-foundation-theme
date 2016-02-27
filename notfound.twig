@@ -1,7 +1,9 @@
 {% extends '_master.twig' %}
 
+{% setcontent record = 'blocks/404-not-found' %}
+
 {% block title %}
-    404 Not found
+    {{ record.title }}
 {% endblock title %}
 
 {% block main %}
@@ -12,20 +14,26 @@
         {% if app.request.server.get('REQUEST_URI') == '/styleguide' %}
             {% include 'styleguide.twig' %}
         {% else %}
-            {% setcontent record = 'blocks/404-not-found' %}
-        {% endif %}
+            <h1>{{ record.title|default('404 not found') }}</h1>
 
-        <h1>{{ record.title|default('404 not found') }}</h1>
+            {% if fields(record) %}
+                {{ fields(record) }}
+            {% else %}
+                <p>
+                    The requested page was not found.
+                </p>
 
-        {% if fields(record) %}
-            {{ fields(record) }}
-        {% else %}
-            <p>
-                The requested page was not found.
-                <mark>
-                    Add a Blocks record with slug '404-not-found' to customize this message.
-                </mark>
-            <p>
+                <div class="success callout" data-closable>
+                    <h5>Add a Blocks record with slug '404-not-found' to customize this message. </h5>
+                    <p>If it's not showing up here, doublecheck that the <tt>slug</tt> is correct, and that the Block is published.</p>
+                    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+
+            {% endif %}
+
         {% endif %}
 
       </div>
