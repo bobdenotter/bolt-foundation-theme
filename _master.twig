@@ -15,27 +15,29 @@
   <body>
   {% block body %}
 
-  <div class="row">
+    {% include '_topbar.twig' %}
 
-      {% if theme.layout.aside == "left" %}
-        {% include '_aside.twig' %}
-      {% endif %}
+    <div class="row">
 
-      <div class="{% if theme.layout.aside not in ['left', 'right'] %}large-centered{% endif %} large-{{ main_width }} columns">
-
-          {% block main %}
-
-          {% endblock main %}
-
-      </div>
-
-      {% if theme.layout.aside == "right" %}
+        {% if theme.layout.aside == "left" %}
           {% include '_aside.twig' %}
-      {% endif %}
+        {% endif %}
 
+        <div class="{% if theme.layout.aside not in ['left', 'right'] %}large-centered{% endif %} large-{{ main_width }} columns">
+
+            {% block main %}
+            {% endblock main %}
+
+        </div>
+
+        {% if theme.layout.aside == "right" %}
+            {% include '_aside.twig' %}
+        {% endif %}
+
+    </div>
 
   {% endblock body %}
-  </div>
+
 
     <script src="{{ paths.theme }}js/jquery.js"></script>
     <script src="{{ paths.theme }}js/foundation.js"></script>

@@ -25,6 +25,7 @@
 @include foundation-label;
 @include foundation-media-object;
 @include foundation-menu;
+@include foundation-menu-icon;
 // @include foundation-off-canvas;
 @include foundation-orbit;
 @include foundation-pagination;
@@ -47,3 +48,8 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+// Override the a inside .menu-text, for topbar navigation, where the 'homepage' has a link.
+.menu > li.menu-text a {
+    padding: 0;
+}
