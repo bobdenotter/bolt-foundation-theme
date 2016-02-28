@@ -2,25 +2,26 @@
 
 {% block main %}
 
-    <div class="row">
+    <h1>{{ record.title }}</h1>
 
-        <div class="large-12 columns">
-            {{ widgets('main_top') }}
-        </div>
+    {{ record.teaser }}
 
-        <div class="large-12 columns">
+    {% if record.image!="" %}
+        <a href="{{ image(record.image) }}">
+            <img src="{{ thumbnail(record.image, 740, 560) }}">
+        </a>
+    {% endif %}
 
-            <h1>{{ record.title }}</h1>
+    {{ record.body }}
 
-            {{ record.image }}
+    {# If there are repeaters, we should output them. #}
+    {{ fields(common = false, extended = false, repeaters = true) }}
 
-            {{ record.teaser }}
+    {# Uncomment this if you wish to dump the entire record to the client, for debugging purposes.
+    {{ print(record) }}
+    #}
 
-            {{ record.body }}
+    {% include '_recordfooter.twig' with { 'record': record } %}
 
-
-
-        </div>
-    </div>
 
 {% endblock main %}
