@@ -2,4 +2,35 @@
 
 {% block main %}
 
+    <h1>{{ record.title }}</h1>
+
+    {{ dump(user) }}
+    {# Remove this block if you don't need it anymore. #}
+    {% if user %}
+    <div class="primary callout" data-closable>
+        <h5>Welcome to the Bolt Foundation theme. </h5>
+        <p>This is a bland, theme, with a modular structure, well suited to build your own theme's on.</p>
+        <ul>
+            <li>Check the <a href=''>readme.md</a> for instructions on how to customize this theme.</li>
+            <li>View the <a href='styleguide'>Styleguide</a> for this theme.</li>
+            <li>Read the <a href=''>Foundation for Sites</a> documentation.</li>
+            <li>Edit this template, to get rid of this 'callout'.</li>
+        </ul>
+        <small>Note: Only registered users will see this. This piece of content is hidden from regular visitors.</small>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+
+    {{ record.teaser }}
+
+    {% if record.image!="" %}
+        <a href="{{ image(record.image) }}">
+            <img src="{{ thumbnail(record.image, 740, 560) }}">
+        </a>
+    {% endif %}
+
+    {{ record.body }}
+
 {% endblock main %}
