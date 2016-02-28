@@ -5,10 +5,10 @@
 
 layout:
   aside: right # left, right, none
-  aside_width: 3 # out of 12
-  main_width: 9 # out of 12
-
-
+  aside_width: 4 # out of 12
+  main_width: 8 # out of 12
+  variant: wide # wide, centered or boxed
+  matte_background: '#CCC' # Only used in 'boxed'
 
 foo: bar
 

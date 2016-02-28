@@ -6,7 +6,7 @@
 
 {% set headerimage_low = paths.theme ~ 'images/placeholders/' ~ random(theme.headerimage) %}
 {% set headerimage = paths.theme ~ 'images/' ~ random(theme.headerimage) %}
-<div class="row headerphoto" style='background-image: url({{ headerimage_low }})' data-interchange="[{{headerimage}}, medium]">
+<div class="large-12 columns headerphoto" style='background-image: url({{ headerimage_low }})' data-interchange="[{{headerimage}}, medium]">
 
     {# the values in the 'app.config' object are taken directly from the file app/config/config.yml #}
     <p><span>{{ app.config.get('general/sitename') }}</span>

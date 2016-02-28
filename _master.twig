@@ -1,47 +1,56 @@
 {% set main_width = theme.layout.main_width|default(8) %}
 {% set aside_width = theme.layout.aside_width|default(4) %}
 <!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Foundation for Bolt{% endblock title %}</title>
-    <link rel="stylesheet" href="{{ paths.theme }}css/foundation.css">
-    <link rel="stylesheet" href="{{ paths.theme }}css/theme.css">
-{% block headincludes %}
-{% endblock headincludes %}
-  </head>
-  <body>
-  {% block body %}
+<html class="no-js" lang="en" style="background-color: {{ theme.layout.matte_background }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Foundation for Bolt{% endblock title %}</title>
+        <link rel="stylesheet" href="{{ paths.theme }}css/foundation.css">
+        <link rel="stylesheet" href="{{ paths.theme }}css/theme.css">
+        {% block headincludes %}
+        {% endblock headincludes %}
+    </head>
+    <body {% if theme.layout.variant == 'boxed' %}class='boxed'{% endif %}>
 
-    {% include '_topbar.twig' %}
-    {% include '_header.twig' %}
+        {% block body %}
 
-    <div class="row">
+            {% if theme.layout.variant != 'wide' %}
+                <div class="row">
+            {% endif %}
 
-        {% if theme.layout.aside == "left" %}
-          {% include '_aside.twig' %}
-        {% endif %}
+            {% include '_topbar.twig' %}
+            {% include '_header.twig' %}
 
-        <div class="{% if theme.layout.aside not in ['left', 'right'] %}large-centered{% endif %} large-{{ main_width }} columns">
+            {% if theme.layout.variant == 'wide' %}
+                </div>
+            {% endif %}
 
-            {% block main %}
-            {% endblock main %}
+            <div class="row">
 
-        </div>
+                {% if theme.layout.aside == "left" %}
+                    {% include '_aside.twig' %}
+                {% endif %}
 
-        {% if theme.layout.aside == "right" %}
-            {% include '_aside.twig' %}
-        {% endif %}
+                <div class="{% if theme.layout.aside not in ['left', 'right'] %}large-centered{% endif %} large-{{ main_width }} columns">
 
-    </div>
+                    {% block main %}
+                    {% endblock main %}
 
-  {% endblock body %}
+                </div>
 
-  {% include '_footer.twig' %}
+                {% if theme.layout.aside == "right" %}
+                    {% include '_aside.twig' %}
+                {% endif %}
 
-{% block bottomincludes %}
-{% endblock bottomincludes %}
-  </body>
+            </div>
+
+        {% endblock body %}
+
+        {% include '_footer.twig' %}
+
+        {% block bottomincludes %}
+        {% endblock bottomincludes %}
+    </body>
 </html>
