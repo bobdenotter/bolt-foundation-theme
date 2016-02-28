@@ -1,4 +1,15 @@
 // Your theme-specific styles go in here.
+@charset 'utf-8';
+
+@import 'settings';
+
+
+body.boxed {
+    background: #FFF;
+    max-width: $global-width + 4rem;
+    margin: auto;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15);
+}
 
 // The Headerphoto, with the background image.
 .headerphoto {
@@ -9,13 +20,3 @@
     max-height: 287px;
 }
 
-footer hr {
-    max-width: 100%;
-}
-
-body.boxed {
-    background: #FFF;
-    max-width: $global-width + 4rem;
-    margin: auto;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15);
-}

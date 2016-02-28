@@ -35,8 +35,12 @@
 
                 <div class="{% if theme.layout.aside not in ['left', 'right'] %}large-centered{% endif %} large-{{ main_width }} columns">
 
+                    {{ widgets('main_top') }}
+
                     {% block main %}
                     {% endblock main %}
+
+                    {{ widgets('main_bottom') }}
 
                 </div>
 
