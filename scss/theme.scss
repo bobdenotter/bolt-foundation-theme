@@ -1,1 +1,10 @@
 // Your theme-specific styles go in here.
+
+// The Headerphoto, with the background image.
+.headerphoto {
+    background-size : cover;
+    background-repeat : no-repeat;
+    background-position:center;
+    height: 18vw;
+    max-height: 287px;
+}
