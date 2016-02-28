@@ -4,31 +4,36 @@
    ternary operators: http://twig.sensiolabs.org/doc/templates.html#other-operators
 #}
 
+{# Make sure the setting for the submenus is defined. #}
+{% if withsubmenus is not defined %}
+    {% set withsubmenus = true %}
+{% endif %}
+
 {# The 'recursive' macro, for inserting one menu item. If it has a submenu, it
    invokes itself to insert the items of the submenus. #}
-{% macro display_menu_item(item, loop, extraclass) %}
-{% from _self import display_menu_item %}
-{% spaceless %}
-<li class="index-{{ loop.index -}}
-    {{ item.path == 'homepage' ? ' menu-text' -}}
-    {{ loop.first ? ' first' -}}
-    {{ loop.last ? ' last' -}}
-    {{ item.submenu|default(false) ? ' is-dropdown-submenu-parent' -}}
-    {{ item|current ? ' active' }}">
+{% macro display_menu_item(item, loop, extraclass, withsubmenus) %}
+    {% from _self import display_menu_item %}
+    {% spaceless %}
+    <li class="index-{{ loop.index -}}
+        {{ item.path|default('') == 'homepage' ? ' menu-text' -}}
+        {{ loop.first ? ' first' -}}
+        {{ loop.last ? ' last' -}}
+        {{ (item.submenu|default(false) and withsubmenus) ? ' is-dropdown-submenu-parent' -}}
+        {{ item|current ? ' active' }}">
 
-    <a href="{{ item.link }}" title='{{ item.title|default('')|escape }}' class='{{ item.class|default('') }}'>
-        {{- item.label|default('-') -}}
-    </a>
+        <a href="{{ item.link }}" title='{{ item.title|default('')|escape }}' class='{{ item.class|default('') }}'>
+            {{- item.label|default('-') -}}
+        </a>
 
-    {% if item.submenu is defined %}
-        <ul class="menu">
-            {% for submenu in item.submenu %}
-                {{ display_menu_item(submenu, loop) }}
-            {% endfor %}
-        </ul>
-    {% endif %}
-</li>
-{% endspaceless %}
+        {% if item.submenu is defined and withsubmenus %}
+            <ul class="menu">
+                {% for submenu in item.submenu %}
+                    {{ display_menu_item(submenu, loop) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+    {% endspaceless %}
 {% endmacro %}
 
 {# Make the macro available for use #}
@@ -38,7 +43,7 @@
 <ul class="dropdown menu" data-dropdown-menu>
 {% for item in menu %}
     {% if item.label is defined %}
-        {{ display_menu_item(item, loop) }}
+        {{ display_menu_item(item, loop, '', withsubmenus) }}
     {% endif %}
 {% endfor %}
 </ul>
