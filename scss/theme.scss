@@ -20,3 +20,8 @@ body.boxed {
     max-height: 287px;
 }
 
+
+// Override the a inside .menu-text, for topbar navigation, where the 'homepage' has a link.
+.menu > li.menu-text a {
+    padding: 0;
+}
