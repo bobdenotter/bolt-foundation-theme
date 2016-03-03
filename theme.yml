@@ -1,7 +1,6 @@
 # Optional config file for the theme.
 
 # Variables that are in this file, can be used in your twig template like {{ theme.foo }}
-# Note: If variables do not immediately show up, clear the cache, in the Bolt Backend.
 
 layout:
   aside: right # left, right, none
@@ -10,9 +9,7 @@ layout:
   variant: wide # wide, centered or boxed
   matte_background: '#CCC' # Only used in 'boxed'
 
-foo: bar
-
-# setting the header image. The default images in this theme all came from Visualhunt: https://visualhunt.com/
+# Setting the header image. The default images in this theme all came from Visualhunt: https://visualhunt.com/
 headerimage:
  - tree-field-cornfield-nature-landscape-sky-clouds.jpg
  - dawn-landscape-mountains-nature-1.jpg
@@ -29,4 +26,3 @@ record_template: record.twig
 listing_template: listing.twig
 search_results_template: search.twig
 notfound: notfound.twig
-

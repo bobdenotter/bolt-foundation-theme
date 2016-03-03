@@ -8,9 +8,10 @@
     {{ menu() }}
   </div>
   <div class="top-bar-right">
+    <form method="get" action="{{ paths.root }}search" id="searchform-inline" enctype="text/plain">
     <ul class="menu">
-      <li><input type="search" placeholder="Search"></li>
-      <li><button type="button" class="button">Search</button></li>
+      <li><input type="search" value="{% if search is defined %}{{ search|escape }}{% endif %}" placeholder="{{ __("Search …") }}" name="search"></li>
+      <li><button type="submit" class="button">{{ __("Search") }}</button></li>
     </ul>
   </div>
 </div>
