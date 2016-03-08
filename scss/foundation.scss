@@ -48,8 +48,3 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
-
-// Override the a inside .menu-text, for topbar navigation, where the 'homepage' has a link.
-.menu > li.menu-text a {
-    padding: 0;
-}
