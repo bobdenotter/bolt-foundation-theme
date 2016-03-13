@@ -65,13 +65,12 @@ gulp.task('javascript', function() {
     .pipe(gulp.dest('js'));
 });
 
-// Compile Sass into CSS
-// In production, the CSS is compressed
-gulp.task('sass', function() {
+// Compile Foundation Sass into CSS. In production, the CSS is compressed
+gulp.task('foundation-sass', function() {
 
   var minifycss = $.if(isProduction, $.minifyCss());
 
-  return gulp.src('scss/*.scss')
+  return gulp.src('scss/foundation.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
@@ -85,10 +84,30 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('css'));
 });
 
+// Compile Theme Sass into CSS. Not compressed.
+gulp.task('theme-sass', function() {
+
+  var minifycss = $.if(isProduction, $.minifyCss());
+
+  return gulp.src('scss/theme.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    // If you _do_ want to compress this file on 'production', uncomment the the lines below.
+    // .pipe(minifycss)
+    // .pipe($.if(!isProduction, $.sourcemaps.write()))
+    .pipe(gulp.dest('css'));
+});
+
 // Build the "dist" folder by running all of the above tasks
-gulp.task('build', ['javascript', 'sass']);
+gulp.task('build', ['javascript', 'foundation-sass', 'theme-sass']);
 
 
-gulp.task('default', ['javascript', 'sass'], function() {
-  gulp.watch(['scss/**/*.scss'], ['sass']);
+gulp.task('default', ['javascript', 'foundation-sass', 'theme-sass'], function() {
+  gulp.watch(['scss/**/*.scss'], ['foundation-sass', 'theme-sass']);
 });

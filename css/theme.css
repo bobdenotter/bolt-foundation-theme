@@ -1,1 +1,15 @@
-body.boxed{background:#FFF;max-width:79rem;margin:auto;box-shadow:1px 1px 20px rgba(0,0,0,.15)}.headerphoto{background-size:cover;background-repeat:no-repeat;background-position:center;height:18vw;max-height:287px}.menu>li.menu-text a{padding:0}
+body.boxed {
+  background: #FFF;
+  max-width: 79rem;
+  margin: auto;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15); }
+
+.headerphoto {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 18vw;
+  max-height: 287px; }
+
+.menu > li.menu-text a {
+  padding: 0; }
