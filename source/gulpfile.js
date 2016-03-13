@@ -62,7 +62,7 @@ gulp.task('javascript', function() {
     .pipe($.concat('foundation.js'))
     .pipe(uglify)
     .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('js'));
+    .pipe(gulp.dest('../js'));
 });
 
 // Compile Foundation Sass into CSS. In production, the CSS is compressed
@@ -81,7 +81,7 @@ gulp.task('foundation-sass', function() {
     }))
     .pipe(minifycss)
     .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('../css'));
 });
 
 // Compile Theme Sass into CSS. Not compressed.
@@ -101,7 +101,7 @@ gulp.task('theme-sass', function() {
     // If you _do_ want to compress this file on 'production', uncomment the the lines below.
     // .pipe(minifycss)
     // .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('../css'));
 });
 
 // Build the "dist" folder by running all of the above tasks
