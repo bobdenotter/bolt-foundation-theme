@@ -20,8 +20,8 @@
                 <div class="row">
             {% endif %}
 
-            {% include '_topbar.twig' %}
-            {% include '_header.twig' %}
+            {% include 'partials/_topbar.twig' %}
+            {% include 'partials/_header.twig' %}
 
             {% if theme.layout.variant == 'wide' %}
                 </div>
@@ -30,7 +30,7 @@
             <div class="row">
 
                 {% if theme.layout.aside == "left" %}
-                    {% include '_aside.twig' %}
+                    {% include 'partials/_aside.twig' %}
                 {% endif %}
 
                 <div class="{% if theme.layout.aside not in ['left', 'right'] %}large-centered{% endif %} large-{{ main_width }} columns">
@@ -45,14 +45,14 @@
                 </div>
 
                 {% if theme.layout.aside == "right" %}
-                    {% include '_aside.twig' %}
+                    {% include 'partials/_aside.twig' %}
                 {% endif %}
 
             </div>
 
         {% endblock body %}
 
-        {% include '_footer.twig' %}
+        {% include 'partials/_footer.twig' %}
 
         {% block bottomincludes %}
         {% endblock bottomincludes %}

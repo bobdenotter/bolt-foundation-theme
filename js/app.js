@@ -1,3 +1,1 @@
 $(document).foundation();
-
-alert('hoi');

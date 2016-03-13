@@ -29,4 +29,4 @@ These are the most important files, included in this theme.
 
 Twig files (the actual 'templates') :
 
- - `_aside.twig`
+ - `partials/_aside.twig`

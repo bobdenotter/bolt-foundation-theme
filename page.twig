@@ -1,4 +1,4 @@
-{% extends '_master.twig' %}
+{% extends 'partials/_master.twig' %}
 
 {% block main %}
 
@@ -21,6 +21,6 @@
     {{ dump(record) }}
     #}
 
-    {% include '_recordfooter.twig' with { 'record': record } %}
+    {% include 'partials/_recordfooter.twig' with { 'record': record } %}
 
 {% endblock main %}
