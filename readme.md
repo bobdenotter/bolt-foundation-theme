@@ -1,48 +1,32 @@
-# Foundation for Sites Template
+Foundation for Bolt Theme
+=========================
 
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
+Foundation for Bolt is a blank theme for Bolt, built on top of [Zurb Foundation for sites 6](http://foundation.zurb.com/). To learn more about specific Foundation components, check out the [Foundation 6 Documentation](http://foundation.zurb.com/sites/docs/).
 
-This is the basic starter project for [Foundation for Sites 6](http://foundation.zurb.com/sites). It includes a Sass compiler and a starter HTML file for you.
+The documentation laid in this README will cover how to get started with Foundation for Bolt and how some Foundation components, are integrated with Bolt.
 
-## Installation
+Features included with Foundation for Bolt?
+-------------------------------------------
 
-To use this template, your computer needs:
+Foundation for Bolt comes with all of the great features that are found in the Zurb Foundation framework, and a few things more. Simply put, if it works in Foundation, it will work in Foundation for Bolt. The theme also includes:
 
-- [NodeJS](https://nodejs.org/en/) (0.12 or greater)
-- [Git](https://git-scm.com/)
+ - Sass(scss) or CSS Versions
+ - Multiple Foundation Navigation and layout options
+ - Optional Bower and Gulp Support
+ - And much, much more!
 
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
+Requirements for Foundation for Bolt
+------------------------------------
 
-### Using the CLI
+You can use whatever you want – seriously. You can use CodeKit, Grunt, Compass or nothing at all. It’s completely up to you how you decide to build your theme – Foundation for Bolt will stay out of your workflow as much as possible.
 
-Install the Foundation CLI with this command:
+This theme does include Bower and Gulp files, and is optimized for a Gulp-based workflow. To get the most out of Foundation for Bolt, Gulp is highly recommended. However, if you're not using Gulp yet, you can also modify the compiled CSS files as is.
 
-```bash
-npm install foundation-cli --global
-```
+File Structure
+--------------
 
-Use this command to set up a blank Foundation for Sites project with this template:
+These are the most important files, included in this theme.
 
-```bash
-foundation new --framework sites --template basic
-```
+Twig files (the actual 'templates') :
 
-The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
-
-### Manual Setup
-
-To manually set up the template, first download it with Git:
-
-```bash
-git clone https://github.com/zurb/foundation-sites-template projectname
-```
-
-Then open the folder in your command line, and install the needed dependencies:
-
-```bash
-cd projectname
-npm install
-bower install
-```
-
-Finally, run `npm start` to run the Sass compiler. It will re-run every time you save a Sass file.
+ - `_aside.twig`
