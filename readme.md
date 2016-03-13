@@ -29,4 +29,42 @@ These are the most important files, included in this theme.
 
 Twig files (the actual 'templates') :
 
- - `partials/_aside.twig`
+```
+.
+├── css/
+│   ├── foundation.css
+│   └── theme.css
+├── images/
+├── js/
+│   ├── app.js
+│   ├── foundation.js
+│   └── jquery.min.js
+├── partials/
+│   ├── _aside.twig
+│   ├── _footer.twig
+│   ├── _fresh_install.twig
+│   ├── _header.twig
+│   ├── _master.twig
+│   ├── _recordfooter.twig
+│   ├── _sub_menu.twig
+│   └── _topbar.twig
+├── source/
+│   ├── scss/
+│   │   ├── _settings.scss   - SCSS source file for Foundation. Is used by `css/foundation.css`.
+│   │   ├── foundation.scss  - SCSS source file for Foundation. Is compiled to `scss/foundation.scss`.
+│   │   └── theme.scss       - SCSS source file for the theme. Is compiled to `css/theme.css`.
+│   ├── .babelrc
+│   ├── bower.json
+│   ├── gulpfile.js
+│   └── package.json
+├── CHANGELOG.md
+├── index.twig
+├── listing.twig
+├── notfound.twig
+├── page.twig
+├── readme.md
+├── record.twig
+├── search.twig
+├── styleguide.twig
+└── theme.yml
+```
