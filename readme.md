@@ -27,44 +27,44 @@ File Structure
 
 These are the most important files, included in this theme.
 
-Twig files (the actual 'templates') :
-
 ```
 .
 ├── css/
-│   ├── foundation.css
-│   └── theme.css
-├── images/
+│   ├── foundation.css       - The compiled Foundation CSS framework
+│   └── theme.css            - Theme-specific CSS
+├── images/                  - Image files for this theme are put here
 ├── js/
-│   ├── app.js
-│   ├── foundation.js
-│   └── jquery.min.js
+│   ├── app.js               - Theme-specific Javascript
+│   ├── foundation.js        - The compiled Foundation javascript library
+│   └── jquery.min.js        - The jQuery javascript library
 ├── partials/
-│   ├── _aside.twig
-│   ├── _footer.twig
-│   ├── _fresh_install.twig
-│   ├── _header.twig
-│   ├── _master.twig
-│   ├── _recordfooter.twig
-│   ├── _sub_menu.twig
-│   └── _topbar.twig
+│   ├── _aside.twig          - Partial for the sidebar. With fixed content, or widgets
+│   ├── _footer.twig         - Partial for the footer below every page
+│   ├── _fresh_install.twig  - Partial that's shown on fresh installs with some instructions
+│   ├── _header.twig         - Partial for the header banner with the site title.
+│   ├── _master.twig         - Twig template, that is uses to 'extend' all pages (See 'template inheritance')
+│   ├── _recordfooter.twig   - Partial with meta-information below a page or entry
+│   ├── _sub_menu.twig       - Partial with macro for rendering the drop-down menu
+│   └── _topbar.twig         - Partial containing the top menu bar
 ├── source/
 │   ├── scss/
-│   │   ├── _settings.scss   - SCSS source file for Foundation. Is used by `css/foundation.css`.
-│   │   ├── foundation.scss  - SCSS source file for Foundation. Is compiled to `scss/foundation.scss`.
-│   │   └── theme.scss       - SCSS source file for the theme. Is compiled to `css/theme.css`.
-│   ├── .babelrc
-│   ├── bower.json
-│   ├── gulpfile.js
-│   └── package.json
-├── CHANGELOG.md
-├── index.twig
-├── listing.twig
-├── notfound.twig
-├── page.twig
-├── readme.md
-├── record.twig
-├── search.twig
-├── styleguide.twig
-└── theme.yml
+│   │   ├── _settings.scss   - SCSS source file for Foundation. Is used by `css/foundation.css`
+│   │   ├── foundation.scss  - SCSS source file for Foundation. Is compiled to `scss/foundation.scss`
+│   │   └── theme.scss       - SCSS source file for the theme. Is compiled to `css/theme.css`
+│   ├── .babelrc             - Helper file for gulp / npm
+│   ├── bower.json           - Configuration for used Bower packages.
+│   ├── gulpfile.js          - Build task script for Gulp.
+│   └── package.json         - Configuration for used Node / Gulp packages.
+├── CHANGELOG.md             - List of versions, and their respective changes.
+├── index.twig               - Template used for 'home'
+├── listing.twig             - Template used for 'listings', like `/pages` or `/category/movies`
+├── notfound.twig            - Template used for the '404 not found' pages
+├── page.twig                - Template used for single record pages, like `/page/lorem-ipsum`
+├── readme.md                - This file. :-)
+├── record.twig              - Generic template used for single record pages, that don't have a specific template set.
+├── search.twig              - Template used for listing search results.
+├── styleguide.twig          - Static page, that shows all Foundation elements on one long page. Go to `/styleguide` to see it in the browser.
+└── theme.yml                - Theme-specific configuration.
 ```
+
+
