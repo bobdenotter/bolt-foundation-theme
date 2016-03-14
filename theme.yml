@@ -6,7 +6,7 @@ layout:
   aside: right # left, right, none
   aside_width: 4 # out of 12
   main_width: 8 # out of 12
-  variant: wide # wide, centered or boxed
+  variant: centered # wide, centered or boxed
   matte_background: '#CCC' # Only used in 'boxed'
 
 # Setting the header image. The default images in this theme all came from Visualhunt: https://visualhunt.com/

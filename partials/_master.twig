@@ -23,7 +23,7 @@
             {% include 'partials/_topbar.twig' %}
             {% include 'partials/_header.twig' %}
 
-            {% if theme.layout.variant == 'wide' %}
+            {% if theme.layout.variant != 'wide' %}
                 </div>
             {% endif %}
 
