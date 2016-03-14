@@ -1,14 +1,21 @@
 Foundation for Bolt Theme
 =========================
 
-Foundation for Bolt is a blank theme for Bolt, built on top of [Zurb Foundation for sites 6](http://foundation.zurb.com/). To learn more about specific Foundation components, check out the [Foundation 6 Documentation](http://foundation.zurb.com/sites/docs/).
+Foundation for Bolt is a blank theme for Bolt, built on top of
+[Zurb Foundation for sites 6](http://foundation.zurb.com/). To learn more about
+specific Foundation components, check out the
+[Foundation 6 Documentation](http://foundation.zurb.com/sites/docs/).
 
-The documentation laid in this README will cover how to get started with Foundation for Bolt and how some Foundation components, are integrated with Bolt.
+The documentation laid in this README will cover how to get started with
+Foundation for Bolt and how some Foundation components, are integrated with
+Bolt.
 
 Features included with Foundation for Bolt?
 -------------------------------------------
 
-Foundation for Bolt comes with all of the great features that are found in the Zurb Foundation framework, and a few things more. Simply put, if it works in Foundation, it will work in Foundation for Bolt. The theme also includes:
+Foundation for Bolt comes with all of the great features that are found in the
+Zurb Foundation framework, and a few things more. Simply put, if it works in
+Foundation, it will work in Foundation for Bolt. The theme also includes:
 
  - Sass(scss) or CSS Versions
  - Multiple Foundation Navigation and layout options
@@ -18,9 +25,14 @@ Foundation for Bolt comes with all of the great features that are found in the Z
 Requirements for Foundation for Bolt
 ------------------------------------
 
-You can use whatever you want – seriously. You can use CodeKit, Grunt, Compass or nothing at all. It’s completely up to you how you decide to build your theme – Foundation for Bolt will stay out of your workflow as much as possible.
+You can use whatever you want – seriously. You can use CodeKit, Grunt, Compass
+or nothing at all. It’s completely up to you how you decide to build your theme
+– Foundation for Bolt will stay out of your workflow as much as possible.
 
-This theme does include Bower and Gulp files, and is optimized for a Gulp-based workflow. To get the most out of Foundation for Bolt, Gulp is highly recommended. However, if you're not using Gulp yet, you can also modify the compiled CSS files as is.
+This theme does include Bower and Gulp files, and is optimized for a Gulp-based
+workflow. To get the most out of Foundation for Bolt, Gulp is highly
+recommended. However, if you're not using Gulp yet, you can also modify the
+compiled CSS files as is.
 
 File Structure
 --------------
@@ -66,5 +78,107 @@ These are the most important files, included in this theme.
 ├── styleguide.twig          - Static page, that shows all Foundation elements on one long page. Go to `/styleguide` to see it in the browser.
 └── theme.yml                - Theme-specific configuration.
 ```
+
+Installation
+------------
+
+To install this theme, simply search for 'Foundation' in Bolt's backend, and
+click the buttons.
+
+Alternatively, download the `.zip` or `.tgz` file from the [bobdenotter/bolt-
+foundation-theme Github repository](https://github.com/bobdenotter/bolt-
+foundation-theme/releases). Extract the file, and place the `foundation` folder
+in your `theme` folder. Don't forget to set `theme: foundation` in your
+`config.yml` file.
+
+Getting Started
+---------------
+
+This theme was developed to be as "tinker friendly" as possible. Depending on
+your area of expertise and experience with different front-end development
+techniques, you can modify the CSS of this theme on different 'levels':
+
+ - If you're familiar with Foundation and gulp, you can finetune which parts of
+   Foundation are included, as well as all their settings. See the
+   `source/scss/foundation.scss` and `source/gulpfile.js` files.
+ - If you do know a bit of SCSS, you can work in `source/scss/theme.scss` and
+   `source/scss/_settings.scss` files.
+ - Otherwise you can just make your changes in the compiled css at `css/theme.css`.
+
+The templates themselves are the `.twig` files in the root of the theme folder,
+as well as the additional helper files in the `partials` folder.
+
+Modifying the HTML of the theme
+-------------------------------
+
+All HTML parts of the theme are made in Twig. If you're not familiar with Twig
+yet, be sure to read the Bolt documentation on Twig, as well as the official
+Twig documentation.
+
+This theme uses a concept called 'template inheritance'. From other themes or
+CMS'es, you might be familiar with seeing each page 'include' a header and a
+'footer'. Instead, we have one 'master' template, which are extended by each of
+the different templates. You can read more about this concept on the
+[Twig site - Template Inheritance](http://twig.sensiolabs.org/doc/tags/extends.html)
+or here: [Dealing With Themes And Layouts With Twig](http://hugogiraudel.com/2013/11/12/themes-layouts-twig/)
+
+
+Working with the `.scss` files
+------------------------------
+
+This theme uses NPM, Gulp and bower to run the tasks to compile and minify the
+Sass files.
+
+If you don't have Node and Gulp running yet, install it from
+[Nodejs.org](https://nodejs.org) and run the following command from the command
+line:
+
+```
+npm install -g bower gulp
+```
+
+If you're new to Gulp, these two tutorials on the subject might be of interest
+to you:
+
+ - https://markgoodyear.com/2014/01/getting-started-with-gulp/
+ - https://travismaynard.com/writing/getting-started-with-gulp
+
+Note that we're using ES6, so you _might_ find yourself in "NPM dependency
+hell". If you do, your best bet would be to make sure you've updated your Gulp,
+Bower and NPM to their respective latest versions. To do so, just run `npm
+install -g bower gulp` again. You might also need to update Node and NPM:
+
+```
+sudo npm cache clean -f;
+sudo npm install -g n;
+sudo n stable
+```
+
+Next, to install the local Bower and NPM modules, run:
+
+```
+npm install
+bower install
+```
+
+Now you can simply run `gulp` to compile the javascript and sass files. When
+developing, you'll want to run:
+
+```
+cd foundation/source
+gulp
+```
+
+This will run gulp, and it will continue to monitor changes to the `.scss`
+files. If you make a change, the compiled files will be updated immediately.
+When you're ready to deploy, and put the site in production, be sure to build
+the files and minify them:
+
+```
+gulp build --production
+```
+
+This will build the files that you can deploy, or put into your versioning
+system.
 
 
