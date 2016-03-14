@@ -40,7 +40,7 @@
 {% from _self import display_menu_item %}
 
 {# The main menu loop: Iterates over the items, calling `display_menu_item` #}
-<ul class="dropdown menu" data-dropdown-menu>
+<ul class="dropdown menu {{ class|default('') }}" data-dropdown-menu>
 {% for item in menu %}
     {% if item.label is defined %}
         {{ display_menu_item(item, loop, '', withsubmenus) }}

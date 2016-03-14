@@ -22,6 +22,13 @@ body.boxed {
 
 
 // Override the a inside .menu-text, for topbar navigation, where the 'homepage' has a link.
-.menu > li.menu-text a {
+.menu > li.menu-text {
     padding: 0;
+    a {
+        color: #000;
+    }
+    &.active a {
+        color: #FFF;
+        background-color: #000;
+    }
 }

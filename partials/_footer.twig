@@ -6,9 +6,7 @@
         </p>
     </div>
     <div class="large-6 columns">
-        <ul class="inline-list">
-            {{ menu(identifier = 'main', template = 'partials/_sub_menu.twig', params = {'withsubmenus': false}) }}
-        </ul>
+            {{ menu(identifier = 'main', template = 'partials/_sub_menu.twig', params = {'withsubmenus': false, 'class': 'inline-list'}) }}
     </div>
 
     {{ widgets('footer') }}
