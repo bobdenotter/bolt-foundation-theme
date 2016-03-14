@@ -122,6 +122,35 @@ the different templates. You can read more about this concept on the
 [Twig site - Template Inheritance](http://twig.sensiolabs.org/doc/tags/extends.html)
 or here: [Dealing With Themes And Layouts With Twig](http://hugogiraudel.com/2013/11/12/themes-layouts-twig/)
 
+For example, take a look at one of the simpler templates, `record.twig`:
+
+```twig
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+        <h1>{{ record.title }}</h1>
+
+        {{ fields() }}
+
+        {% include 'partials/_recordfooter.twig' with { 'record': record } %}
+
+{% endblock main %}
+```
+
+You'll notice the first line that states that the template 'extends' the
+`_master.twig` partial. The rest of the template is the `{% block %}`, which
+overrides the 'main' block in the master template. Inside the block is just an
+`<h1>`-tag with the record's title, a `{{ fields() }}` tag that will output the
+fields that are defined for this contenttype, and it closes with an include of
+`_recordfooter.twig` to display some meta data, like the author, date and
+permalink.
+
+As you can see, we can still use 'include' for small blocks of HTML, even though
+we're using template inheritance. This way we can keep our themes very
+structured and organized.
+
+
 
 Working with the `.scss` files
 ------------------------------
