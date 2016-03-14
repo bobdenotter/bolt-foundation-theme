@@ -11,5 +11,10 @@ body.boxed {
   height: 18vw;
   max-height: 287px; }
 
-.menu > li.menu-text a {
+.menu > li.menu-text {
   padding: 0; }
+  .menu > li.menu-text a {
+    color: #000; }
+  .menu > li.menu-text.active a {
+    color: #FFF;
+    background-color: #000; }
