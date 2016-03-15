@@ -150,31 +150,48 @@ As you can see, we can still use 'include' for small blocks of HTML, even though
 we're using template inheritance. This way we can keep our themes very
 structured and organized.
 
+In the diagram below, you'll see the wat most pages are structured. In this case,
+`index.twig`. In the HTML, you will see it extends `_master.twig`, which can be found in
+the `partials/` folder. Inside this file, the global structure of all pages is laid out:
+The basic HTML structure, and a handful of other included partials.
+
 ```
-┌───────────────────┬──────────────────────────┬─────────────┐
-│ Home link1 link2  │                          │ Search | OK │
-├───────────────────┴──────────────────────────┴─────────────┤
-│••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│
-│•••••••••••••••(header image + name of site)••••••••••••••••│
-│••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│
-├────────────────────────────────────────────────────────────┤
-│ ┌──────────────────────────────┐   ┌────────────────────┐  │
-│ │Lorem ipsum dolor sit amet    │   │Lorem ipsum dolor   │  │
-│ │                              │   │sit amet.           │  │
-│ │Consectetur adipiscing elit.  │   │Consectetur         │  │
-│ │Nunc omni virtuti vitium      │   │adipiscing elit.    │  │
-│ │contrahgo nomine opponitur.   │   │                    │  │
-│ │Non enim, si malum est dolor, │   │Latest X            │  │
-│ │carere eo malo satis est ad   │   │ - intellegetur     │  │
-│ │bene vivendum. Duo Reges:     │   │ - Expectoque       │  │
-│ │constructio interrete.        │   │ - videantur        │  │
-│ └──────────────────────────────┘   │                    │  │
-│ ┌──────────────────────────────┐   │Latest Y            │  │
-│ │Lorem ipsum dolor sit amet    │   │ - intellegetur     │  │
-│ │                              │   │ - Expectoque       │  │
-│ │Consectetur adipiscing elit.  │   │ - videantur        │  │
-│ │Nunc omni virtuti vitium      │   │                    │  │
-└─┴──────────────────────────────┴───┴────────────────────┴──┘
+ index.twig structure                     _topbar.twig
+
+                                               │
+                     |──────────────────────────────────────────────────────────|
+
+                    ┌──────────────────────────┬─────────────────┬───────────────┐
+ _sub_menu.twig ──▶ │  Home link1 link2 link3  │                 │______ [Search]│ ◀── _search.twig
+                    ├──────────────────────────┴─────────────────┴───────────────┤
+                    │••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│
+                    │•••••••••••••••••••••••(header image)•••••••••••••••••••••••│ ◀── _header.twig
+                    │•••••••••••••••••••••••(name of site)•••••••••••••••••••••••│
+                    │••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│
+                    │ ┌──────────────────(main content)─┐ ┌────────────(aside)─┐ │
+                    │ │Lorem ipsum dolor sit amet       │ │Lorem ipsum dolor   │ │
+                    │ │                                 │ │sit amet. Consec-   │ │
+                    │ │Consectetur adipiscing elit. Nunc│ │tetur adipiscing.   │ │
+                    │ │omni virtuti vitium contrario    │ │                    │ │
+                    │ │nominehgpponitur. Non enim, si   │ │Latest X            │ │
+                    │ │malum est dolor, carere eo malo  │ │ - intellegetur     │ │
+                    │ │satis est ad bene vivendum. Duo  │ │ - Expectoque       │ │
+                    │ │Reges: constructio interrete.    │ │ - videantur        │ │ ◀── _aside.twig
+                    │ │                                 │ │                    │ │
+                    │ └─────────────────────────────────┘ │Latest Y            │ │
+                    │ ┌─────────────────────────────────┐ │ - intellegetur     │ │
+                    │ │Lorem ipsum dolor sit amet       │ │ - Expectoque       │ │
+                    │ │                                 │ │ - videantur        │ │
+                    │ │Consectetur adipiscing elit. Nunc│ │                    │ │
+                    │ │omni virtuti vitium contrario    │ │                    │ │
+                 -  ├─┴──────────────────────────────┬──┴─┴────────────────────┴─┤
+  _footer.twig ──│  │ (C) 2016                       │  Home link1 link2 link3   │ ◀── _sub_menu.twig
+                 -  └────────────────────────────────┴───────────────────────────┘
+
+                   |────────────────────────────┬─────────────────────────────────|
+                                                │
+
+                                           _master.twig
 ```
 
 
