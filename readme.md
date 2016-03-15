@@ -150,6 +150,32 @@ As you can see, we can still use 'include' for small blocks of HTML, even though
 we're using template inheritance. This way we can keep our themes very
 structured and organized.
 
+```
+┌───────────────────┬──────────────────────────┬─────────────┐
+│ Home link1 link2  │                          │ Search | OK │
+├───────────────────┴──────────────────────────┴─────────────┤
+│••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│
+│•••••••••••••••(header image + name of site)••••••••••••••••│
+│••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│
+├────────────────────────────────────────────────────────────┤
+│ ┌──────────────────────────────┐   ┌────────────────────┐  │
+│ │Lorem ipsum dolor sit amet    │   │Lorem ipsum dolor   │  │
+│ │                              │   │sit amet.           │  │
+│ │Consectetur adipiscing elit.  │   │Consectetur         │  │
+│ │Nunc omni virtuti vitium      │   │adipiscing elit.    │  │
+│ │contrahgo nomine opponitur.   │   │                    │  │
+│ │Non enim, si malum est dolor, │   │Latest X            │  │
+│ │carere eo malo satis est ad   │   │ - intellegetur     │  │
+│ │bene vivendum. Duo Reges:     │   │ - Expectoque       │  │
+│ │constructio interrete.        │   │ - videantur        │  │
+│ └──────────────────────────────┘   │                    │  │
+│ ┌──────────────────────────────┐   │Latest Y            │  │
+│ │Lorem ipsum dolor sit amet    │   │ - intellegetur     │  │
+│ │                              │   │ - Expectoque       │  │
+│ │Consectetur adipiscing elit.  │   │ - videantur        │  │
+│ │Nunc omni virtuti vitium      │   │                    │  │
+└─┴──────────────────────────────┴───┴────────────────────┴──┘
+```
 
 
 Working with the `.scss` files
