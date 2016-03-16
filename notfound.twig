@@ -8,7 +8,7 @@
 
 {% block main %}
     <div class="row">
-      <div class="large-12 columns">
+        <div class="large-12 columns">
 
         {# special case: See if we actually want the Styleguide. #}
         {% if app.request.server.get('REQUEST_URI') == '/styleguide' %}
@@ -30,13 +30,11 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
-
             {% endif %}
 
         {% endif %}
 
-      </div>
+        </div>
     </div>
 
 {% endblock main %}

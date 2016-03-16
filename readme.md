@@ -194,6 +194,95 @@ The basic HTML structure, and a handful of other included partials.
                                            _master.twig
 ```
 
+Options in `theme.yml`
+----------------------
+
+This theme comes with its own configuration file, named `theme.yml`. In this file you can set certain specific options for the theme, such as the default images for the header, the position of the 'aside' sidebar, and the global layout.
+
+### Setting `layout:variant`
+
+You can select a global layout, which determines if the way the website looks. Possible options are:
+
+`centered`: Centers the layout on wide screens, so that the 'main content' is in the middle of the screen.
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ o o o      browser window                                              │
+├─────┬────────────────────────────────────────────┬───────────────┬─────┤
+│     │  Home link1 link2 link3                    │______ [Search]│     │
+│     └────────────────────────────────────────────┴───────────────┘     │
+│     ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••     │
+│     ••••••••••••••••••••••••(header image)••••••••••••••••••••••••     │
+│     ••••••••••••••••••••••••(name of site)••••••••••••••••••••••••     │
+│     ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••     │
+│       ┌──────────────────(main content)─┐ ┌────────────(aside)─┐       │
+│       │Lorem ipsum dolor sit amet       │ │Lorem ipsum dolor   │       │
+│       │                                 │ │sit amet. Consec-   │       │
+│       │Consectetur adipiscing elit. Nunc│ │tetur adipiscing.   │       │
+│       │omni virtuti vitium contrario    │ │                    │       │
+│       │nominehgpponitur. Non enim, si   │ │Latest X            │       │
+│       │malum est dolor, carere eo malo  │ │ - intellegetur     │       │
+│       └─────────────────────────────────┘ │ - Expectoque       │       │
+│       ┌─────────────────────────────────┐ │ - videantur        │       │
+│       │Lorem ipsum dolor sit amet       │ │                    │       │
+│       │                                 │ │Latest Y            │       │
+│       │Consectetur adipiscing elit. Nunc│ │ - intellegetur     │       │
+└───────┴─────────────────────────────────┴─┴────────────────────┴───────┘
+```
+
+`wide`: uses a 'wide' layout, meaning the header and top bar are streched to the edges of the browser on large screens:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ o o o      browser window                                              │
+├────────────────────────────────────────────────────────┬───────────────┤
+│  Home link1 link2 link3                                │______ [Search]│
+├────────────────────────────────────────────────────────┴───────────────┤
+│••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│
+│•••••••••••••••••••••••••••••(header image)•••••••••••••••••••••••••••••│
+│•••••••••••••••••••••••••••••(name of site)•••••••••••••••••••••••••••••│
+│••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│
+│       ┌──────────────────(main content)─┐ ┌────────────(aside)─┐       │
+│       │Lorem ipsum dolor sit amet       │ │Lorem ipsum dolor   │       │
+│       │                                 │ │sit amet. Consec-   │       │
+│       │Consectetur adipiscing elit. Nunc│ │tetur adipiscing.   │       │
+│       │omni virtuti vitium contrario    │ │                    │       │
+│       │nominehgpponitur. Non enim, si   │ │Latest X            │       │
+│       │malum est dolor, carere eo malo  │ │ - intellegetur     │       │
+│       └─────────────────────────────────┘ │ - Expectoque       │       │
+│       ┌─────────────────────────────────┐ │ - videantur        │       │
+│       │Lorem ipsum dolor sit amet       │ │                    │       │
+│       │                                 │ │Latest Y            │       │
+│       │Consectetur adipiscing elit. Nunc│ │ - intellegetur     │       │
+└───────┴─────────────────────────────────┴─┴────────────────────┴───────┘
+```
+
+`boxed`: Adds a background and a border around the centered content.
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ o o o      browser window                                              │
+├────────────────────────────────────────────────────────────────────────┤
+│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
+│░░░░░┌────────────────────────────────────────────┬───────────────┐░░░░░│
+│░░░░░│  Home link1 link2 link3                    │______ [Search]│░░░░░│
+│░░░░░├────────────────────────────────────────────┴───────────────┤░░░░░│
+│░░░░░│••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│░░░░░│
+│░░░░░│•••••••••••••••••••••••(header image)•••••••••••••••••••••••│░░░░░│
+│░░░░░│•••••••••••••••••••••••(name of site)•••••••••••••••••••••••│░░░░░│
+│░░░░░│••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••│░░░░░│
+│░░░░░│ ┌──────────────────(main content)─┐ ┌────────────(aside)─┐ │░░░░░│
+│░░░░░│ │Lorem ipsum dolor sit amet       │ │Lorem ipsum dolor   │ │░░░░░│
+│░░░░░│ │                                 │ │sit amet. Consec-   │ │░░░░░│
+│░░░░░│ │Consectetur adipiscing elit. Nunc│ │tetur adipiscing.   │ │░░░░░│
+│░░░░░│ │omni virtuti vitium contrario    │ │                    │ │░░░░░│
+│░░░░░│ │nominehgpponitur. Non enim, si   │ │Latest X            │ │░░░░░│
+│░░░░░│ │malum est dolor, carere eo malo  │ │ - intellegetur     │ │░░░░░│
+│░░░░░│ └─────────────────────────────────┘ │ - Expectoque       │ │░░░░░│
+│░░░░░│ ┌─────────────────────────────────┐ │ - videantur        │ │░░░░░│
+│░░░░░│ │Lorem ipsum dolor sit amet       │ │                    │ │░░░░░│
+└─────┴─┴─────────────────────────────────┴─┴────────────────────┴─┴─────┘
+```
 
 Working with the `.scss` files
 ------------------------------
