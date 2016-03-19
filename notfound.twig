@@ -12,7 +12,7 @@
 
         {# special case: See if we actually want the Styleguide. #}
         {% if app.request.server.get('REQUEST_URI') == '/styleguide' %}
-            {% include 'styleguide.twig' %}
+            {{ include('styleguide.twig') }}
         {% else %}
             <h1>{{ record.title|default('404 not found') }}</h1>
 

@@ -133,7 +133,7 @@ For example, take a look at one of the simpler templates, `record.twig`:
 
         {{ fields() }}
 
-        {% include 'partials/_recordfooter.twig' with { 'record': record } %}
+        {{ include('partials/_recordfooter.twig', { 'record': record }) }}
 
 {% endblock main %}
 ```
