@@ -47,7 +47,7 @@
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
-$primary-color: #2199e8;
+$primary-color: #2B2B2B;
 $secondary-color: #777;
 $success-color: #3adb76;
 $warning-color: #ffae00;
@@ -86,8 +86,8 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 20px,
-  medium: 30px,
+  small: 24px,
+  medium: 48px,
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;
@@ -95,14 +95,14 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-family: montserrat;
+$header-font-weight: 700;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 24,
-    'h2': 20,
+    'h1': 36,
+    'h2': 24,
     'h3': 19,
     'h4': 18,
     'h5': 17,
@@ -110,16 +110,16 @@ $header-sizes: (
   ),
   medium: (
     'h1': 48,
-    'h2': 40,
-    'h3': 31,
+    'h2': 36,
+    'h3': 24,
     'h4': 25,
     'h5': 20,
     'h6': 16,
   ),
 );
 $header-color: inherit;
-$header-lineheight: 1.4;
-$header-margin-bottom: 0.5rem;
+$header-lineheight: 1;
+$header-margin-bottom: 1em;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
@@ -373,6 +373,8 @@ $menu-margin-nested: 1rem;
 $menu-item-padding: 0.7rem 1rem;
 $menu-icon-spacing: 0.25rem;
 $menu-expand-max: 6;
+$menu-item-color-active: #2B2B2B;
+$menu-item-background-active: transparent;
 
 // 23. Off-canvas
 // --------------
@@ -542,8 +544,8 @@ $tooltip-radius: $global-radius;
 // 35. Top Bar
 // -----------
 
-$topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-padding: 0.5rem 0;
+$topbar-background: transparent;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
 
