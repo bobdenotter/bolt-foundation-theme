@@ -10,7 +10,8 @@
   "homepage": "http://foundation.zurb.com",
   "dependencies": {
     "foundation-sites": "~6.2.0",
-    "motion-ui": "~1.2.2"
+    "motion-ui": "~1.2.2",
+    "what-input": "~2.0.1"
   },
   "ignore": [
     "**/.*",
@@ -21,6 +22,6 @@
   ],
   "private": true,
   "resolutions": {
-    "jquery": "~2.2.0"
+    "what-input": "~2.0.1"
   }
 }
