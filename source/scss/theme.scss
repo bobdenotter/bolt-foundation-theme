@@ -3,32 +3,38 @@
 
 @import 'settings';
 
-
-body.boxed {
-    background: #FFF;
-    max-width: $global-width + 4rem;
-    margin: auto;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15);
-}
-
 // The Headerphoto, with the background image.
 .headerphoto {
-    background-size : cover;
-    background-repeat : no-repeat;
-    background-position:center;
-    height: 18vw;
-    max-height: 287px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    min-height: 20vh;
+    max-height: 40vw;
 }
 
+.column, .columns{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.headertitle {
+    text-align: center;
+}
+
+[type='search'] {
+    box-shadow: none;
+}
 
 // Override the a inside .menu-text, for topbar navigation, where the 'homepage' has a link.
-.menu > li.menu-text {
+.menu > li {
     padding: 0;
     a {
-        color: #000;
+        color: #2B2B2B;
     }
-    &.active a {
-        color: #FFF;
-        background-color: #000;
+    &.active > a {
+        color: #2B2B2B;
+        background-color: inherit;
+        border-bottom: 1px solid;
     }
 }
