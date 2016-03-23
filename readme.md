@@ -291,6 +291,55 @@ edges of the browser on large screens:
 └─────┴─┴─────────────────────────────────┴─┴────────────────────┴─┴─────┘
 ```
 
+The `theme.yml` file also defines the default images, that are used in the
+header of the website. Feel free to change these for other images. A lot of
+royalty-free images to be used, can be found at
+[visualhunt.com](http://visualhunt.com).
+
+Finally, the last section defines the settings for which templates are used for
+which types of pages. The templates you will set in this config file will
+override the ones in the global app/config/config.yml, so beware!
+
+```
+# maintenance_template: maintenance_default.twig
+homepage_template: index.twig
+record_template: record.twig
+listing_template: listing.twig
+search_results_template: search.twig
+notfound: notfound.twig
+```
+
+For details on which page is used when, see the next section in this document.
+
+
+Working with the `.twig` files
+------------------------------
+
+You are free to do what you want, when it comes to the .twig files. Out-of-the-
+box, this theme comes with a handful of templates, that correspond to
+the default contenttypes when you have a fresh install of Bolt.
+
+Most of the templates will be pretty straightforward, especially if you're
+familiar with the concept of Template Inheritance. The main templates are:
+
+ - `index.twig`: Used as the frontpage or homepage of the site.
+ - `listing.twig`: This template is used for listing overviews of all kind, like
+   `/pages` for all records in the 'pages contenttype' or `category/movies` for
+   all records that have the 'movies' category assigned to them. Note that
+   'search' uses its own template, though.
+ - `notfound.twig`: This template is used as the template that's shown when the
+   visitor hits a non-existing page on the website.
+ - `page.twig`: The detail page for a single record of the 'pages' contenttype.
+   Automatically picked up by Bolt, if the name matches.
+ - `record.twig`: The "generic" detail page for a single record page. This is
+   used as the fallback, if there's no specific template set for a single record
+   page.
+ - `search.twig`: This page displays the search results and a search box, to
+   search again.
+ - `styleguide.twig`: A sample page, showing most of the common typograhy
+   options, form elements, as well as other components supplied by Foundation 6.
+
+
 Working with the `.scss` files
 ------------------------------
 
@@ -353,14 +402,3 @@ This will build the files that you can deploy, or put into your versioning
 system.
 
 
-Working with the `.twig` files
-------------------------------
-
-You are free to do what you want, when it comes to the .twig files. Out-of-the-box, this theme comes with a handful of templates, that correspond to the default contenttypes when you have a fresh install of Bolt.
-
-Most of the templates will be pretty straightforward, especially if you're familiar with the concept of Template Inheritance. The main templates are:
-
- - `index.twig`: Used as the frontpage or homepage of the site.
- - `listing.twig`: This template is used for listing overviews of all kind, like `/pages` for all records in the 'pages contenttype' or `category/movies` for all records that have the 'movies' category assigned to them. Note that 'search' uses its own template, though.
- - `notfound.twig`: This template is used as the template that's shown when the visitor hits a non-existing page on the website.
- - `record.twig`: The "generic" detail page for a single record page.
