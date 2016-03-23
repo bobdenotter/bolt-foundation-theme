@@ -3,20 +3,14 @@
 
 @import 'settings';
 
-
-body.boxed {
-    max-width: $global-width + 4rem;
-    margin: auto;
-}
-
 // The Headerphoto, with the background image.
 .headerphoto {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 20vw;
-    min-height: 250px;
-    max-height: 500px;
+    height: 500px;
+    min-height: 20vh;
+    max-height: 40vw;
 }
 
 .column, .columns{
@@ -33,12 +27,12 @@ body.boxed {
 }
 
 // Override the a inside .menu-text, for topbar navigation, where the 'homepage' has a link.
-.menu > li.menu-text {
+.menu > li {
     padding: 0;
     a {
         color: #2B2B2B;
     }
-    &.active a {
+    &.active > a {
         color: #2B2B2B;
         background-color: inherit;
         border-bottom: 1px solid;

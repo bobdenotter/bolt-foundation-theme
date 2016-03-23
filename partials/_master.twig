@@ -9,11 +9,11 @@
         <title>{% block title %}Foundation for Bolt{% endblock title %}</title>
         <link rel="stylesheet" href="{{ paths.theme }}css/foundation.css">
         <link rel="stylesheet" href="{{ paths.theme }}css/theme.css">
-        <link rel="stylesheet" href="https://fonts.kx.nu/brick/montserrat.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         {% block headincludes %}
         {% endblock headincludes %}
     </head>
-    <body {% if theme.layout.variant == 'boxed' %}class='boxed'{% endif %}>
+    <body>
 
         {% block body %}
 

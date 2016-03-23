@@ -6,15 +6,10 @@ layout:
   aside: right # left, right, none
   aside_width: 4 # out of 12
   main_width: 8 # out of 12
-  variant: boxed # wide, centered or boxed
-  matte_background: '#CCC' # Only used in 'boxed'
+  variant: centered # wide or centered
 
 # Setting the header image. The default images in this theme all came from Visualhunt: https://visualhunt.com/
 headerimage:
- - tree-field-cornfield-nature-landscape-sky-clouds.jpg
- - dawn-landscape-mountains-nature-1.jpg
- - dawn-landscape-mountains-nature-2.jpg
- - landscape-scotland-isle-of-skye-old-man-of-storr.jpg
  - street-road-straight-horizon-endless-way-travel.jpg
 
 # Template filenames. If you 're creating a theme for distribution, you can specify

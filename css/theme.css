@@ -1,14 +1,10 @@
-body.boxed {
-  max-width: 79rem;
-  margin: auto; }
-
 .headerphoto {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 20vw;
-  min-height: 250px;
-  max-height: 500px; }
+  height: 500px;
+  min-height: 20vh;
+  max-height: 40vw; }
 
 .column, .columns {
   padding-top: 1.5rem;
@@ -20,11 +16,11 @@ body.boxed {
 [type='search'] {
   box-shadow: none; }
 
-.menu > li.menu-text {
+.menu > li {
   padding: 0; }
-  .menu > li.menu-text a {
+  .menu > li a {
     color: #2B2B2B; }
-  .menu > li.menu-text.active a {
+  .menu > li.active > a {
     color: #2B2B2B;
     background-color: inherit;
     border-bottom: 1px solid; }
