@@ -338,6 +338,7 @@ familiar with the concept of Template Inheritance. The main templates are:
    search again.
  - `styleguide.twig`: A sample page, showing most of the common typograhy
    options, form elements, as well as other components supplied by Foundation 6.
+   Use your browser to go to `/styleguide` to view this page.
 
 
 Working with the `.scss` files
