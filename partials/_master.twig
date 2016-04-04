@@ -1,7 +1,7 @@
 {% set main_width = theme.layout.main_width|default(8) %}
 {% set aside_width = theme.layout.aside_width|default(4) %}
 <!doctype html>
-<html class="no-js" lang="en" style="background-color: {{ theme.layout.matte_background }}">
+<html class="no-js" lang="{{ htmllang() }}" style="background-color: {{ theme.layout.matte_background }}">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
