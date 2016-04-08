@@ -31,13 +31,7 @@
 
                 <h2><a href="{{ record.link }}">{{ record.title }}</a></h2>
 
-                {% if record.image!="" %}
-                    <div class="large-4 imageholder">
-                        <a href="{{ image(record.image) }}">
-                            <img src="{{ thumbnail(record.image, 400, 260) }}">
-                        </a>
-                    </div>
-                {% endif %}
+                {{ popup(record.image, 1200, 500) }}
 
                 {# display something introduction-like.. #}
                 {% if record.introduction %}

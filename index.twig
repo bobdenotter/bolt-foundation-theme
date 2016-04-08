@@ -4,16 +4,13 @@
 
     <h1>{{ record.title }}</h1>
 
+
     {# Remove this block if you don't need it anymore. #}
     {{ include('partials/_fresh_install.twig') }}
 
     {{ record.teaser }}
 
-    {% if record.image!="" %}
-        <a href="{{ image(record.image) }}">
-            <img src="{{ thumbnail(record.image, 740, 560) }}">
-        </a>
-    {% endif %}
+    {{ popup(record.image, 1200, 500) }}
 
     {{ record.body }}
 

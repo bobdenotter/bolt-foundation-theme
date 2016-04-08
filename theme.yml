@@ -26,3 +26,32 @@ record_template: record.twig
 listing_template: listing.twig
 search_results_template: search.twig
 notfound: notfound.twig
+
+# Extra 'templatefields' can be specified for use in the records / contenttypes that make use of a 
+# specific template. This allows editors to add additional fields to a certain page, but not to others.
+templatefields:
+    extrafields.twig:
+        section_1:
+            type: text
+            label: Section 1
+        section_2:
+            type: html
+            label: Section 2
+        image:
+            type: image
+    anotherextrafields.twig:
+        markdown:
+            type: markdown
+            label: A markdown field
+        geolocation:
+            type: geolocation
+            label: A geolocation field
+        image:
+            type: image
+
+# Templates can be named for display in the template selector, to allow editors to pick 
+# from easier to understand names.
+templateselect:
+    templates:
+         - name: 'Template with extra fields'
+           filename: 'extrafields.twig'
