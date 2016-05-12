@@ -8,8 +8,8 @@ body.boxed {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 18vw;
-  max-height: 287px; }
+  height: 30vw;
+  max-height: 30vh; }
 
 .menu > li.menu-text {
   padding: 0; }
