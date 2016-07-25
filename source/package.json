@@ -39,6 +39,6 @@
     "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-uglify": "^1.5.4",
     "js-yaml": "^3.6.1",
-    "yargs": "^4.7.1"
+    "yargs": "^4.8.1"
   }
 }
