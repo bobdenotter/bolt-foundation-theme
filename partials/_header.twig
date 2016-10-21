@@ -4,8 +4,8 @@
    content in 'record', or - as we do in this example - take a random one from the list
    in the /theme/foundation/theme.yml file. #}
 
-{% set headerimage_low = paths.theme ~ 'images/placeholders/' ~ random(theme.headerimage) %}
-{% set headerimage = paths.theme ~ 'images/' ~ random(theme.headerimage) %}
+{% set headerimage_low = asset('images/placeholders/' ~ random(theme.headerimage), 'theme') %}
+{% set headerimage = asset('images/' ~ random(theme.headerimage), 'theme') %}
 <div class="large-12 columns headerphoto" style='background-image: url({{ headerimage_low }})' data-interchange="[{{headerimage}}, medium]">
 
     {# the values in the 'app.config' object are taken directly from the file app/config/config.yml #}
