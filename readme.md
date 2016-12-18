@@ -10,6 +10,9 @@ The documentation laid in this README will cover how to get started with
 Foundation for Bolt and how some Foundation components, are integrated with
 Bolt.
 
+To get an idea of what it looks like out of the box, see the barebones
+screenshots at the bottom of this page.
+
 Features included with Foundation for Bolt
 ------------------------------------------
 
@@ -382,3 +385,12 @@ Gulp (which is what we use under the hood) might be of interest to you:
 
  - https://markgoodyear.com/2014/01/getting-started-with-gulp/
  - https://travismaynard.com/writing/getting-started-with-gulp
+
+Screenshots
+-----------
+
+![frontpage](https://raw.githubusercontent.com/bobdenotter/bolt-foundation-theme/master/screenshots/frontpage.png)
+
+![page](https://raw.githubusercontent.com/bobdenotter/bolt-foundation-theme/master/screenshots/page1.png)
+
+![page](https://raw.githubusercontent.com/bobdenotter/bolt-foundation-theme/master/screenshots/page2.png)
