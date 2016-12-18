@@ -1,0 +1,23 @@
+{
+    "name": "bolt/foundation",
+    "description": "This a blank theme for Bolt, built on top of the Foundation for Sites framework. It is built with Zurb Foundation 6.3 and Sass, but you can use it as-is.",
+    "type": "bolt-theme",
+    "keywords": [ "theme", "bolt", "bare bones", "boilerplate", "skeleton", "foundation" ],
+    "require": {
+        "bolt/bolt": ">3.0,<4.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bob den Otter",
+            "email": "bob@twokings.nl"
+        }
+    ],
+    "extra": {
+        "bolt-screenshots": [
+            "screenshots/frontpage.png",
+            "screenshots/page1.png",
+            "screenshots/page2.png"
+        ]
+    }
+}
