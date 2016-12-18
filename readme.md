@@ -391,6 +391,4 @@ Screenshots
 
 ![frontpage](https://raw.githubusercontent.com/bobdenotter/bolt-foundation-theme/master/screenshots/frontpage.png)
 
-![page](https://raw.githubusercontent.com/bobdenotter/bolt-foundation-theme/master/screenshots/page1.png)
-
-![page](https://raw.githubusercontent.com/bobdenotter/bolt-foundation-theme/master/screenshots/page2.png)
+![page](https://raw.githubusercontent.com/bobdenotter/bolt-foundation-theme/master/screenshots/page.png)

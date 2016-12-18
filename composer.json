@@ -16,8 +16,7 @@
     "extra": {
         "bolt-screenshots": [
             "screenshots/frontpage.png",
-            "screenshots/page1.png",
-            "screenshots/page2.png"
+            "screenshots/page.png"
         ]
     }
 }
