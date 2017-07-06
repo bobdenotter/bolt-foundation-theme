@@ -22,7 +22,7 @@
                is set to true. This way we keep 'grouping' intact in the listing. #}
             {% if not taxonomy.has_sortorder %}
                 {# If we specified an order in config.yml, sort them here, accordingly: #}
-                {% set records = records|order(app.config.get('general/listing_sort')) %}
+                {% set records = records|order(config.get('general/listing_sort')) %}
             {% endif %}
         {% endif %}
 
@@ -41,6 +41,8 @@
                 {% else %}
                     <p>{{ record.excerpt(300, false, search|default('')) }}</p>
                 {% endif %}
+
+                {% include 'partials/_recordfooter.twig' with { 'record': record } %}
 
             </article>
 
@@ -61,6 +63,6 @@
         {% endfor %}
 
         {# If there are more records than will fit on one page, the pager is shown. #}
-        {{ pager() }}
+        {{ pager(template = 'partials/_sub_pager.twig') }}
 
 {% endblock main %}
