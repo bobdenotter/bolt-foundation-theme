@@ -2,7 +2,8 @@ body.boxed {
   background: #FFF;
   max-width: 79rem;
   margin: auto;
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15); }
+  -webkit-box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15); }
 
 .headerphoto {
   background-size: cover;

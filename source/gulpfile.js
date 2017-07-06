@@ -87,7 +87,6 @@ gulp.task('foundation-sass', function() {
 // Compile Theme Sass into CSS. Not compressed.
 gulp.task('theme-sass', function() {
 
-
   return gulp.src('scss/theme.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
